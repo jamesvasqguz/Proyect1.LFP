@@ -1,0 +1,18 @@
+header{
+    color: red;
+    font-size: 60px;
+    font-family: 'Times New Roman';
+    font-weight: bold; 
+}
+h1{
+    color:blue;
+    font-size: 40px;
+    font-family: 'Times New Roman';
+    font-weight: bold;
+}
+.contenedor{
+    width: 70%;
+    display: block;
+    margin: auto;
+    border: 2px solid black;
+}
