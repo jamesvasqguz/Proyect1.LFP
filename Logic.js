@@ -36,12 +36,13 @@ function isIdentifier() {
                 if (james.value[0] == arrayWord[j] && (james.value[i] == arrayNumber[m] ||
                     james.value[i] == arrayWord[j])) {
                     a = ' Identifier';
+                    alert("It's an Identifier " + james.value);
                     jara();
                     finalizar == false;
                     num == false;
                     numer == false;
                     sym == false;
-                    return alert("It's an Identifier " + james.value);
+                
                 }
             }
         }
@@ -50,15 +51,15 @@ function isIdentifier() {
 function isNumber() {
     for (var i = 0; i < james.value.length; i++) {
         for (var j = 0; j < arrayNumber.length; j++) {
-            for (var m = 0; m < arrayWord.length; m++) {
-                if (james.value[0] == arrayNumber[j] && !james.value[i] == arrayWord[m]) {
+            for (var m = 0; m < arrayWord.length; m++) {    
+                if (james.value[i] == arrayNumber[j]&&!james.value[i] == arrayWord[m]) {
                     a = ' Number';
+                    alert("Number " + james.value);
                     jara();
                     finalizar == false;
                     numer == false;
                     sym == false;
                     iden == false;
-                    return alert("Number " + james.value);
                 }
             }
         }
@@ -69,13 +70,13 @@ function isNumberError() {
         for (var j = 0; j < arrayNumber.length; j++) {
             for (var m = 0; m < arrayWord.length; m++) {
                 if (james.value[0] == arrayNumber[j] && james.value[i] == arrayWord[m]) {
-                    a = ' Error';
+                    a = ' Error'.fontcolor("red");
+                    alert("Error " + james.value);
                     jara();
                     finalizar == false;
                     num == false;
                     iden == false;
                     sym == false;
-                    return alert("Error " + james.value);
                 }
             }
         }
@@ -86,14 +87,13 @@ function isSymbol() {
         for (var j = 0; j < arraySymbol.length; j++) {
             if (james.value[i] == arraySymbol[j]) {
                 a = ' Symbol';
+                alert("It's a Symbol " + james.value);
                 jara();
                 finalizar == false;
                 num == false;
                 iden == false;
                 numer == false;
-                alert("It's a Symbol " + james.value);
             }
         }
     }
-
 }
