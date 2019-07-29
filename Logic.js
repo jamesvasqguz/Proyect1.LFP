@@ -39,7 +39,6 @@ function isIdentifier() {
                     alert("It's an Identifier " + james.value);
                     jara();
                     finalizar == false;
-                    num == false;
                     numer == false;
                     sym == false;
                 
@@ -52,7 +51,7 @@ function isNumber() {
     for (var i = 0; i < james.value.length; i++) {
         for (var j = 0; j < arrayNumber.length; j++) {
             for (var m = 0; m < arrayWord.length; m++) {    
-                if (james.value[i] == arrayNumber[j]&&!james.value[i] == arrayWord[m]) {
+                if (james.value[0]==arrayNumber[j]||(!(james.value[i]==arrayWord[m]))){
                     a = ' Number';
                     alert("Number " + james.value);
                     jara();
@@ -69,7 +68,9 @@ function isNumberError() {
     for (var i = 0; i < james.value.length; i++) {
         for (var j = 0; j < arrayNumber.length; j++) {
             for (var m = 0; m < arrayWord.length; m++) {
-                if (james.value[0] == arrayNumber[j] && james.value[i] == arrayWord[m]) {
+                if (james.value[0] == arrayNumber[j]&&
+                    james.value[i] == arrayWord[m]
+                    &&!james.value[i] == arrayNumber[j]){
                     a = ' Error'.fontcolor("red");
                     alert("Error " + james.value);
                     jara();
