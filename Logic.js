@@ -12,16 +12,16 @@ function logicV() {
     var numer = true;
     var sym = true;
 
-    if (finalizar == true && iden == true) {
+    if (finalizar && iden == true) {
         isIdentifier();
     }
-    if (finalizar == true && num == true) {
+    if (finalizar && num == true) {
         isNumber();
     }
-    if (finalizar == true && numer == true) {
+    else if (finalizar && numer == true) {
         isNumberError();
     }
-    if (finalizar == true && sym == true) {
+    if (finalizar && sym == true) {
         isSymbol();
     }
 }
@@ -36,12 +36,12 @@ function isIdentifier() {
                 if (james.value[0] == arrayWord[j] && (james.value[i] == arrayNumber[m] ||
                     james.value[i] == arrayWord[j])) {
                     a = ' Identifier';
-                    alert("It's an Identifier " + james.value);
                     jara();
+                    alert("It's an Identifier " + james.value);
                     finalizar == false;
-                    numer == false;
                     sym == false;
-                
+                    num == false;
+                    numer == false;
                 }
             }
         }
@@ -50,17 +50,19 @@ function isIdentifier() {
 function isNumber() {
     for (var i = 0; i < james.value.length; i++) {
         for (var j = 0; j < arrayNumber.length; j++) {
-            for (var m = 0; m < arrayWord.length; m++) {    
-                if (james.value[0]==arrayNumber[j]||(!(james.value[i]==arrayWord[m]))){
+            for (var m = 0; m < arrayWord.length; m++) {
+                if (james.value[0] == arrayNumber[j] &&!(james.value[i] == arrayWord[m])) {
                     a = ' Number';
-                    alert("Number " + james.value);
                     jara();
+                    alert("Number " + james.value);
                     finalizar == false;
                     numer == false;
                     sym == false;
                     iden == false;
                 }
+                console.log("Este es j: " + j);
             }
+            console.log("Este es i: " + i);
         }
     }
 }
@@ -68,12 +70,10 @@ function isNumberError() {
     for (var i = 0; i < james.value.length; i++) {
         for (var j = 0; j < arrayNumber.length; j++) {
             for (var m = 0; m < arrayWord.length; m++) {
-                if (james.value[0] == arrayNumber[j]&&
-                    james.value[i] == arrayWord[m]
-                    &&!james.value[i] == arrayNumber[j]){
+                if (james.value[0] == arrayNumber[j] && james.value[i] == arrayWord[m] && (james.value[0] != arrayWord[m])) {
                     a = ' Error'.fontcolor("red");
-                    alert("Error " + james.value);
                     jara();
+                    alert("Error " + james.value);
                     finalizar == false;
                     num == false;
                     iden == false;
@@ -83,13 +83,14 @@ function isNumberError() {
         }
     }
 }
+
 function isSymbol() {
     for (var i = 0; i < james.value.length; i++) {
         for (var j = 0; j < arraySymbol.length; j++) {
             if (james.value[i] == arraySymbol[j]) {
                 a = ' Symbol';
-                alert("It's a Symbol " + james.value);
                 jara();
+                alert("It's a Symbol " + james.value);
                 finalizar == false;
                 num == false;
                 iden == false;
